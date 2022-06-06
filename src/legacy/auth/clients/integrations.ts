@@ -1,4 +1,5 @@
 // import { SetupDetailsNotFound } from '../errors'
+import { get } from '../../../lib/database/integrations.js'
 import { TIntegrationConfig, EAuthType } from '../v3/types'
 import '../../../../integrations'
 import Knex from 'knex'
@@ -78,8 +79,9 @@ export const getAuth = async <IAuthResult>({ buid, authId, store }: IAuthParams 
 export const getConfig = async ({ buid }: { buid: string }) => {
   let item = {} as any
   try {
-    item = require(`../../../../integrations/${buid}.json`)
+    item = await get(buid)
   } catch (err) {
+    console.error(err)
     if (err.code === 'MODULE_NOT_FOUND') {
       return false
     }

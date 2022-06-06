@@ -24,6 +24,7 @@ export const fetchAuthDetails = asyncMiddleware(async (req: TBackendRequestV4, _
 
   const integrationConfig = await integration.config()
   const { authType } = integrationConfig
+  console.warn({integrationConfig})
 
   if (!Object.values(EAuthType).includes(authType)) {
     throw new InvalidAuthType(authType)

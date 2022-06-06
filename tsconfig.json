@@ -1,11 +1,11 @@
 {
   "compilerOptions": {
-    "target": "es2018",
+    "target": "es2019",
     "module": "commonjs",
     "allowSyntheticDefaultImports": true,
     "downlevelIteration": true,
     "esModuleInterop": true,
-    "lib": ["es5", "es6", "dom", "es2015", "es2015.symbol", "esnext.asynciterable", "es2017", "dom"],
+    "lib": ["ES2019"],
     "noUnusedLocals": true,
     "strictNullChecks": true,
     "skipLibCheck": true,
